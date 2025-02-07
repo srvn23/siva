@@ -1,0 +1,191 @@
+<html lang=""><head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://gsports.gitam.edu/assets/css/bootstrap.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://gsports.gitam.edu/assets/font-awesome/css/font-awesome.min.css">
+
+	<title></title>
+	<style type="text/css">
+		body {
+			font-size: 18px;
+			font-family: 'Arial'; 
+			background: #e7e7e7;
+		}
+
+		#print-table {
+			margin: 0 auto;
+			width: 800px;
+			background: #fff;
+			padding: 20px;
+		}
+
+		table {
+			margin: 0 auto;
+		}
+
+		table th {
+			font-weight: bold;
+			text-align: left;
+			width: 25%;
+		}
+
+		table td {
+			/*text-align: center;*/
+			width: 75%;
+		}
+
+		table th,
+		table td {
+			/*padding: 5px;*/
+			/*border: 1px solid #ccc;*/
+		}
+
+		.user-img {
+			width: 50px;
+			/*		height: 50px;*/
+			/*		border-radius: 50%;*/
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="print-table">
+		<div class="card" style="width:600px !important; margin:0 auto;" id="print-pdf">
+			<div class="logo text-center">
+				<!-- <img src="https://gsports.gitam.edu/assets/images/GITAM_logo.png" class="gitam-logo-1" height="50"> -->
+				<img src="https://cdn.gitam.edu/images/logo/gitam-new-logo.png" class="gitam-logo-1" height="50">
+				<h3>Reservation information</h3>
+			</div>
+			<table class="m17 jb jb1 table table-bordered" style="width:100% !important">
+				<tbody>
+					<tr>
+						<th>Ref. number</th>
+						<td id = "refno" style="color:blue;">
+							20250310403765						</td>
+					</tr>
+					<tr>
+						<th>Stadium</th>
+						<td>
+							Fitness &amp; Performance Centre						</td>
+					</tr>
+					<tr>
+						<th>Playground</th>
+						<td>
+							Fitness &amp; Performance Centre						</td>
+					</tr>
+					<tr>
+						<th>Court</th>
+						<td>
+							room 1						</td>
+					</tr>
+					<tr>
+						<th>Name</th>
+						<td>
+														<img src="https://doeresults.gitam.edu/photo/img.aspx?id=VU21CSEN0500007" class="user-img"> YARKAREDDY SUKUMAR REDDY						</td>
+					</tr>
+					<tr>
+						<th>Department</th>
+						<td>
+							CSE						</td>
+					</tr>
+					<tr>
+						<th>Campus</th>
+						<td>
+							GIT, Visakhapatnam						</td>
+					</tr>
+					<tr>
+						<th>Mobile</th>
+						<td style="color:blue;">
+							8897558829						</td>
+					</tr>
+					<tr>
+						<th>E-mail</th>
+						<td>
+							syarkare@gitam.in						</td>
+					</tr>
+										<tr>
+						<th>Booking date</th>
+						<td id = "asker">
+							11-Sep-2024						</td>
+					</tr>
+					<tr>
+						<th>Booking slot</th>
+						<td style="color:red;">
+							07:00 AM to 08:00 AM						</td>
+					</tr>
+
+					<tr>
+						<th>Amount</th>
+						<td>
+							FREE						</td>
+					</tr>
+					<tr>
+						<th>Status</th>
+						<td>
+							<b>Approved</b>						</td>
+					</tr>
+					<tr>
+						<th>Remarks</th>
+						<td>
+							<b>Approved</b>						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+<!-- 		<div style="text-align: center;" id="print-btn"><button class="btn btn-primary" onclick="printpage();" type="button">Download</button></div> -->
+	</div>
+	<br>
+
+	<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
+	<script type="text/javascript" src="https://gsports.gitam.edu/assets/js/pdfmake.min.js"></script>
+	<script type="text/javascript" src="https://gsports.gitam.edu/assets/js/html2canvas.min.js"></script>
+	<script type="text/javascript">
+		function printpage() {
+
+			document.getElementById("print-btn").style.display = 'none';
+			var fileName = '20240910403765' + ".pdf";
+			html2canvas(document.getElementById('print-pdf'), {
+				onrendered: function(canvas) {
+					var data = canvas.toDataURL();
+					var docDefinition = {
+						content: [{
+							image: data,
+							width: 500,
+						}]
+					};
+					pdfMake.createPdf(docDefinition).download(fileName);
+				}
+			});
+		}
+	</script>
+	<style>
+		td {
+			white-space: nowrap;
+		}
+
+		th {
+			white-space: nowrap;
+		}
+	</style>
+
+  <script>
+		n =  new Date();
+		y = n.getFullYear();
+		m = n.getMonth();
+		d = n.getDate();
+		d = d<10 ? "0" + d : d;
+		var mon = ["Jan", "Feb","Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov","Dec"];
+		document.getElementById("asker").innerHTML = d + "-" + mon[m] + "-" + y;
+
+		x = n.getMonth() + 1;
+		x = x<10 ? "0" + x : x;
+		document.getElementById("refno").innerHTML = ""+y+""+x+"0"+"974873";
+	</script>
+
+	
+
+</body></html>
